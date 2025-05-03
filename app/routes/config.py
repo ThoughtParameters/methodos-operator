@@ -6,12 +6,12 @@ from app.models.agent import MethodosAgent
 
 config_router = APIRouter(
     prefix='/config',
-    tags="Configuration",
+    tags=["Configuration"],
     responses={404: {"description": "Not found"}},
 )
 
 @config_router.post(
-    '/',
+    path='/',
     response_model=None,
     status_code=status.HTTP_200_OK,
     summary="Agent configuration",

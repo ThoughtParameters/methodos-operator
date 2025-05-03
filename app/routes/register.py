@@ -6,7 +6,7 @@ from app.models.agent import RegisterAgent
 
 register_router = APIRouter(
   prefix='/register',
-  tags="Registration",
+  tags=["Registration"],
   responses={404: {"description": "Not found"}},
 )
 @register_router.post(
