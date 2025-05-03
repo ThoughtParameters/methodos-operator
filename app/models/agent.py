@@ -41,26 +41,21 @@ class MethodosAgent(BaseModel):
         """,
     )
 
-class AgentConfiguration(BaseModel):
-    serial_number: str = Field(
-        description="Configuration serial number for tracking purposes.",
-        example="1234567890",
+class RegisterAgent(BaseModel):
+    fqdn: str = Field(
+        description="Hostname of the node the agent is running on.",
+        example="host.example.com"
     )
-    config_version: str = Field(
-        description="Configuration version.",
-        example="1.0.0",
+    uuid: UUID = Field(
+        description="Unique identifier for the agent.",
+        example="123e4567-e89b-12d3-a456-426614174000"
     )
-    config_type: Type = Field(
-        description="Configuration type.",
+    type: Type = Field(
+        description="The agent type either host, container, or unknown.",
         example=Type.HOST,
     )
-    status_url: str = Field(
-        description="Status URL.",
-        example="https://example.com/status",
+    version: str = Field(
+        description="The agent version.",
+        example="1.0.0",
     )
-    metrics_url: str = Field(
-        description="Metrics URL.",
-        example="https://example.com/metrics",
-    )
-    
     
